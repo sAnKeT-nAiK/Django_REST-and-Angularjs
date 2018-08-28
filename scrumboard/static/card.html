@@ -1,0 +1,24 @@
+
+<div class="card" ng-hide="edit" ng-click="edit=true">
+  <div class="container">
+    <h4><b>{{card.title}}</b></h4> 
+    <p>{{card.description}}</p> 
+  </div>
+</div>
+
+<div class="card" ng-show="edit"
+     ng-model-options="modelOptions">
+  <div class="container">
+  	<label><strong>Title:&nbsp;</strong></label>
+    <input type="text" 
+    ng-model="card.title" 
+    ng-change="update()"/> 
+   </div>
+   <textarea 
+   ng-model="card.description" 
+   placeholder="enter description.." 
+   ng-change="update()"></textarea>
+
+   <button ng-click="edit=false">Close</button>
+   <button ng-click="delete()">Delete</button>
+  </div>
